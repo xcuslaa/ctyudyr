@@ -9,7 +9,7 @@
             "settings": {
                 "clients": [
                     {
-                        "id": "$AUUID"
+                        "id": "6cb4a758-45ca-4368-9a62-b1d0cf8d89ab"
                     }
                 ],
                 "disableInsecureEncryption": true
@@ -18,7 +18,7 @@
                 "network": "ws",
                 "allowInsecure": false,
                 "wsSettings": {
-                  "path": "/$AUUID-vmess"
+                  "path": "/6cb4a758-45ca-4368-9a62-b1d0cf8d89ab-vmess"
                 }
             },
             "sniffing": {
@@ -35,9 +35,8 @@
             "settings": {
                 "clients": [
                     {
-                        "id": "$AUUID",
-                        "level": 0,
-                        "email": "love@v2fly.org"
+                        "id": "6cb4a758-45ca-4368-9a62-b1d0cf8d89ab",
+                        "level": 0
                     }
                 ],
                 "decryption": "none"
@@ -46,60 +45,7 @@
                 "network": "ws",
                 "allowInsecure": false,
                 "wsSettings": {
-                  "path": "/$AUUID-vless"
-                }
-            },
-            "sniffing": {
-                "enabled": true,
-                "destOverride": [
-                    "http",
-                    "tls"
-                ]
-            }
-        },
-        {   
-            "listen": "127.0.0.1",
-            "port": 4324,
-            "protocol": "shadowsocks",
-            "settings": {
-                "email": "love@v2fly.org",
-                "method": "$ParameterSSENCYPT",
-                "password":"$AUUID",
-                "network": "tcp,udp",
-                "ivCheck": true
-            },
-            "streamSettings": {
-                "network": "ws",
-                "security": "none",
-                "wsSettings": {
-                    "path": "/$AUUID-ss"
-                }
-            },
-            "sniffing": {
-                "enabled": true,
-                "destOverride": [
-                    "http",
-                    "tls"
-                ]
-            }
-        },
-        {   
-            "listen": "127.0.0.1",
-            "port": 5234,
-            "protocol": "socks",
-            "settings": {
-                "auth": "password",
-                "accounts": [
-                    {
-                        "user": "$AUUID",
-                        "pass": "$AUUID"
-                    }
-                ]
-            },
-            "streamSettings": {
-                "network": "ws",
-                "wsSettings": {
-                  "path": "/$AUUID-socks"
+                  "path": "/6cb4a758-45ca-4368-9a62-b1d0cf8d89ab-vless"
                 }
             },
             "sniffing": {
@@ -116,9 +62,8 @@
             "settings": {
                 "clients": [
                     {
-                        "password":"$AUUID",
-                        "level": 0,
-                        "email": "love@v2fly.org"
+                        "password":"6cb4a758-45ca-4368-9a62-b1d0cf8d89ab",
+                        "level": 0
                     }
                 ],
                 "decryption": "none"
@@ -127,7 +72,7 @@
                 "network": "ws",
                 "allowInsecure": false,
                 "wsSettings": {
-                  "path": "/$AUUID-trojan"
+                  "path": "/6cb4a758-45ca-4368-9a62-b1d0cf8d89ab-trojan"
                 }
             },
             "sniffing": {
