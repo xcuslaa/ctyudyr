@@ -1,4 +1,4 @@
-:$PORT
+:443
 root * /usr/share/caddy
 file_server browse
 
@@ -16,14 +16,10 @@ header {
     -Hidden
 }
 
-basicauth /$AUUID/* {
-    $AUUID $MYUUID-HASH
-}
-
 @websocket_xray_vmess {
 header Connection *Upgrade*
 header Upgrade    websocket
-path /$AUUID-vmess
+path /6cb4a758-45ca-4368-9a62-b1d0cf8d89ab-vmess
 }
 reverse_proxy @websocket_xray_vmess unix//etc/caddy/vmess
 
@@ -31,27 +27,13 @@ reverse_proxy @websocket_xray_vmess unix//etc/caddy/vmess
 @websocket_xray_vless {
 header Connection *Upgrade*
 header Upgrade    websocket
-path /$AUUID-vless
+path /6cb4a758-45ca-4368-9a62-b1d0cf8d89ab-vless
 }
 reverse_proxy @websocket_xray_vless unix//etc/caddy/vless
 
 @websocket_xray_trojan {
 header Connection *Upgrade*
 header Upgrade    websocket
-path /$AUUID-trojan
+path /6cb4a758-45ca-4368-9a62-b1d0cf8d89ab-trojan
 }
 reverse_proxy @websocket_xray_trojan unix//etc/caddy/trojan
-
-@websocket_xray_ss {
-header Connection *Upgrade*
-header Upgrade    websocket
-path /$AUUID-ss
-}
-reverse_proxy @websocket_xray_ss 127.0.0.1:4324
-
-@websocket_xray_socks {
-header Connection *Upgrade*
-header Upgrade    websocket
-path /$AUUID-socks
-}
-reverse_proxy @websocket_xray_socks 127.0.0.1:5234
